@@ -1,0 +1,154 @@
+/* ----- FONTS -----*/
+@font-face {
+  font-family: "spartanBold";
+  src: url(fonts/Spartan-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "spartanReg";
+  src: url(fonts/Spartan-Regular.ttf);
+  font-weight: 400;
+}
+
+/* ----- VARIABLES -----*/
+:root {
+  --primary: #c9ced3;
+  --second: #e7e7e7;
+  --border-radius: 2rem;
+}
+
+/* ----- BASE -----*/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  //   background-color: lightblue;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: spartanReg, sans-serif;
+  font-size: inherit;
+}
+
+/* Images created by: https://unsplash.com/@pawel_czerwinski */
+
+/* ----- BODY -----*/
+
+.player-container {
+  height: 50rem;
+  width: 40rem;
+  background-color: var(--second);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1.5rem 3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.img-container {
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+  top: -50px;
+  left: 50px;
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.5rem 3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  margin: 0.5rem 0 0;
+}
+
+/* Progress */
+.progress-container {
+  background: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 4rem 2rem;
+  height: 0.4rem;
+  width: 90%;
+}
+
+.progress {
+  background: #242323;
+  border-radius: 0.5rem;
+  height: 100%;
+  /* change this to show progress */
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.duration-wrapper {
+  position: relative;
+  top: -2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Controls */
+.player-controls {
+  position: relative;
+  top: -1.5rem;
+  left: 12rem;
+  width: 20rem;
+}
+
+.fas {
+  font-size: 3rem;
+  color: rgb(129, 129, 129);
+  margin-right: 3rem;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+
+.main-button {
+  font-size: 4rem;
+  position: relative;
+  top: 0.3rem;
+}
+
+/* ----- Media Query ----- */
+@media screen and (max-width: 376px) {
+  .player-container {
+    width: 95vw;
+  }
+
+  .img-container {
+    left: 2.3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .player-controls {
+    top: -1rem;
+    left: 10rem;
+  }
+}
